@@ -11,7 +11,7 @@ branches:
   only:
   - master
 after_script:
-  - NOW_ALIAS=xn--whois-0q93d.ws node_modules/.bin/now-travis
+  - NOW_ALIAS=whois-emoji.now.sh node_modules/.bin/now-travis
 env:
   global:
     secure: iGJFxLvYFdZoDT9xURCCowEwBZ8wAa/gtC5BXfQ8Wu/M0/y8F/1IRnNlcVuBXdIZCbMCppkbxphEHhyOXkBw0RaSnkXyGBAJi2FIKEKS+XpKdCuq4RKhJc5c3OLUFxHFJgG37jy3bpHvl87KwcpNKOxzHpAGabdyBVzb+lo44ixTzsOC9wQ3AJezp8eoYCQ9POhJBFU3nfTBu1ljI8fyothatuDdwE5TAm12xCi6lcALi7e41kGlpOEMhgFuVdkjExx/c/GgDrJYvD73TJ4ysf3gocuznFOfkO79XTcCqdplvzxLqgYtgdXsPhW1N4YyOsKsBHryql+D/eu/w2VUkKuUx1M1f24AbUQ8YgYk7bqurVNpvOTWFI5iLuBSSS2Kb2Uczap5I07yL4cgPHXQDhNitCsvvgLwIz5Ao2xjCFaQFJjvk0GstrZyYJZUqy/kc6NFY0gll3E32dYbeUCVihI7mXazUJtmrtRx8IF9gSm13JHDcvbOGtmo16N47RT+O20N0//5VR71G2MuiHBka2BH7ga/95mks+YVl9MPUCThfKvp0g2MQjO4Jc9SueS5RIRrDfkuizKqMiMaixhxHrsSdH2dd6IvR24I3Sd0/Zloo31IcG8kRw11UirQs0QNsqZ3rYulAuyiQsYfiaNNTsZugkDBcNz3+CmQYSzH134=
