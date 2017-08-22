@@ -1,7 +1,9 @@
-import "isomorphic-fetch";
-import Head from "../components/head";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import 'isomorphic-fetch';
+import Head from '../components/head';
 
-export default class WhoisPuny extends React.Component {
+const WhoisEmoji = class extends Component {
   static async getInitialProps({ query: { d } }) {
     let whois = {};
     if (d) {
@@ -11,16 +13,14 @@ export default class WhoisPuny extends React.Component {
         )}`
       );
       whois = await res.json();
-      console.log(whois);
     }
     return { whois, domain: d };
   }
 
   static getRandomPunyUrl() {
-    const urls = ["keepit💯.ws", "🍕😺.ws", "📙.ws", "🕶.ws", "🌑.ws"];
+    const urls = ['keepit💯.ws', '🍕😺.ws', '📙.ws', '🕶.ws', '🌑.ws'];
     return urls[Math.floor(Math.random() * urls.length)];
   }
-
   render() {
     return (
       <div className="wrapper">
@@ -28,7 +28,12 @@ export default class WhoisPuny extends React.Component {
           title="WHOIS Emoji"
           description="Search WHOIS records for domains including emoji domains."
         />
-        <h1>WHOIS Emoji 🔮</h1>
+        <h1>
+          WHOIS Emoji
+          <span role="img" aria-label="crystal ball">
+            🔮
+          </span>
+        </h1>
         <form>
           <input
             type="text"
@@ -105,4 +110,9 @@ export default class WhoisPuny extends React.Component {
       </div>
     );
   }
-}
+};
+WhoisEmoji.propTypes = {
+  domain: PropTypes.string.isRequired,
+  whois: PropTypes.shape({}).isRequired,
+};
+export default WhoisEmoji;

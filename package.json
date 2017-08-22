@@ -3,14 +3,49 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "now",
+    "lint": "eslint . --fix",
+    "precommit": "lint-staged && yarn run lint"
   },
   "dependencies": {
     "global": "^4.3.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "^3.0.6",
     "now": "^7.3.0",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-styled-components": "^1.1.7",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "15.0.1",
+    "eslint-config-prettier": "2.1.1",
+    "eslint-plugin-flowtype": "2.34.0",
+    "eslint-plugin-import": "2.3.0",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-prettier": "2.1.1",
+    "eslint-plugin-react": "7.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "nodeunit": "^0.11.1",
+    "park-sh": "git+ssh://git@github.com/nbcdotcom/park-sh.git#v3.2.0",
+    "prettier": "^1.5.3",
+    "semantic-release": "^6.3.6",
+    "semantic-release-conventional-commits": "^1.1.0",
+    "validate-commit-message": "^3.0.1",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "release": {
+    "analyzeCommits": "semantic-release-conventional-commits"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
   }
 }
