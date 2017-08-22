@@ -1,13 +1,15 @@
 {
-  "name": "whois-puny-website",
+  "name": "whois-emoji-website",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "global": "^4.3.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "^3.0.6",
+    "now": "^7.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }

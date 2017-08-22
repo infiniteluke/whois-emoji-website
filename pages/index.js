@@ -28,7 +28,7 @@ export default class WhoisPuny extends React.Component {
           title="WHOIS Emoji"
           description="Search WHOIS records for domains including emoji domains."
         />
-        <h1>WHOIS</h1>
+        <h1>WHOIS Emoji 🔮</h1>
         <form>
           <input
             type="text"
