@@ -16,11 +16,34 @@ const WhoisEmoji = class extends Component {
     }
     return { whois, domain: d };
   }
-
-  static getRandomPunyUrl() {
-    const urls = ['keepit💯.ws', '🍕😺.ws', '📙.ws', '🕶.ws', '🌑.ws'];
-    return urls[Math.floor(Math.random() * urls.length)];
+  componentDidMount() {
+    setInterval(() => {
+      this.setState(() => ({
+        placeholder: this.emojiIterator.next().value,
+      }));
+    }, 2000);
   }
+
+  static *getEmojiUrl() {
+    const urls = [
+      'keepit💯.ws',
+      '🍕😺.ws',
+      '📙.ws',
+      '🕶.ws',
+      '🌑.ws',
+      '🐮.ws',
+      'i❤️🍕.ws',
+    ];
+    let i = 0;
+    for (;;) {
+      i += 1;
+      yield urls[i % urls.length];
+    }
+  }
+  emojiIterator = this.constructor.getEmojiUrl();
+  state = {
+    placeholder: this.emojiIterator.next().value,
+  };
   render() {
     return (
       <div className="wrapper">
@@ -39,7 +62,7 @@ const WhoisEmoji = class extends Component {
             type="text"
             name="d"
             defaultValue={this.props.domain}
-            placeholder={this.constructor.getRandomPunyUrl()}
+            placeholder={this.state.placeholder}
           />
           <input type="submit" value="🔍" />
         </form>
@@ -111,8 +134,11 @@ const WhoisEmoji = class extends Component {
     );
   }
 };
+WhoisEmoji.defaultProps = {
+  domain: '',
+};
 WhoisEmoji.propTypes = {
-  domain: PropTypes.string.isRequired,
+  domain: PropTypes.string,
   whois: PropTypes.shape({}).isRequired,
 };
 export default WhoisEmoji;
