@@ -1,5 +1,8 @@
 {
   "name": "whois-emoji-website",
+  "repository": {
+    "url": "https://github.com/infiniteluke/whois-emoji-website"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
