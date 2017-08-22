@@ -10,7 +10,10 @@ after_success:
 branches:
   except:
   - /^v\d+\.\d+\.\d+$/
+before_deploy:
+  - yarn run predeploy
 deploy:
   provider: pages
+  local_dir: out
   skip_cleanup: true
   github_token: $GH_TOKEN
