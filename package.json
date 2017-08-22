@@ -6,7 +6,8 @@
     "start": "next start",
     "deploy": "now",
     "lint": "eslint . --fix",
-    "precommit": "lint-staged && yarn run lint"
+    "precommit": "lint-staged && yarn run lint",
+    "semantic-release": "semantic-release pre && semantic-release post"
   },
   "dependencies": {
     "global": "^4.3.2",
