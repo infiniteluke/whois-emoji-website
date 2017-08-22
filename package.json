@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "export": "next build && next export",
     "start": "next start",
-    "predeploy": "yarn export && touch out/.nojekyll",
     "lint": "eslint . --fix",
     "precommit": "lint-staged && yarn run lint",
     "semantic-release": "semantic-release pre && semantic-release post"
@@ -36,6 +34,7 @@
     "eslint-plugin-react": "7.0.1",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.2",
+    "now-travis": "^1.0.1",
     "prettier": "^1.5.3",
     "semantic-release": "^6.3.6",
     "semantic-release-conventional-commits": "^1.1.0",

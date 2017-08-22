@@ -8,7 +8,4 @@ module.exports = {
 
     return conf;
   },
-  exportPathMap: () => ({
-    '/': { page: '/' },
-  }),
 };
