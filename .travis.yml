@@ -1,12 +1,14 @@
 dist: trusty
 language: node_js
-cache: yarn
+cache:
+  directories:
+    - node_modules
 notifications:
   email: false
 node_js:
 - 8
 after_success:
-- npm run semantic-release
+- yarn semantic-release
 branches:
   only:
   - master

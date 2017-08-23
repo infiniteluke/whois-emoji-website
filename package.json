@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint . --fix",
     "precommit": "lint-staged && yarn run lint",
-    "semantic-release": "semantic-release pre && semantic-release post"
+    "semantic-release": "semantic-release pre && semantic-release post",
+    "commitmsg": "validate-commit-msg"
   },
   "dependencies": {
     "global": "^4.3.2",
@@ -36,7 +37,7 @@
     "lint-staged": "^4.0.2",
     "now-travis": "^1.0.1",
     "prettier": "^1.5.3",
-    "semantic-release": "^6.3.6",
+    "semantic-release": "^7.0.2",
     "semantic-release-conventional-commits": "^1.1.0",
     "validate-commit-message": "^3.0.1",
     "validate-commit-msg": "^2.14.0"
@@ -50,5 +51,5 @@
       "git add"
     ]
   },
-  "version": "1.1.1"
+  "version": "0.0.0-development"
 }
