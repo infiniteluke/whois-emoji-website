@@ -67,19 +67,22 @@ const WhoisEmoji = class extends Component {
           />
           <input type="submit" value="🔍" />
         </form>
-        {this.props.domain &&
+        {this.props.domain && (
           <section>
-            <h2>
-              WHOIS for {this.props.domain}
-            </h2>
+            <h2>WHOIS for {this.props.domain}</h2>
             <div className="whois-output">
-              {Object.keys(this.props.whois).length
-                ? Object.entries(this.props.whois).map(entry =>
-                    <div className="whois-entry">{`${entry[0]}: ${entry[1]}`}</div>
-                  )
-                : <p>No WHOIS entry found.</p>}
+              {Object.keys(this.props.whois).length ? (
+                Object.entries(this.props.whois).map(entry => (
+                  <div key={entry[0]} className="whois-entry">{`${entry[0]}: ${
+                    entry[1]
+                  }`}</div>
+                ))
+              ) : (
+                <p>No WHOIS entry found.</p>
+              )}
             </div>
-          </section>}
+          </section>
+        )}
         <footer>
           <p>
             Made with{' '}
@@ -109,7 +112,7 @@ const WhoisEmoji = class extends Component {
             display: flex;
             align-items: flex-end;
           }
-          form input[type="text"] {
+          form input[type='text'] {
             border: 1px solid #e1e1e1;
             width: 100%;
             max-width: 500px;
@@ -119,7 +122,7 @@ const WhoisEmoji = class extends Component {
             font-size: 45px;
             padding: 25px;
           }
-          form input[type="submit"] {
+          form input[type='submit'] {
             border: none;
             background-color: #e1e1e1;
             border-top-right-radius: 20px;

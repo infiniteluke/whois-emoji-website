@@ -15,11 +15,11 @@
   "dependencies": {
     "global": "^4.3.2",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^3.0.6",
+    "next": "^3.2.3",
     "now": "^7.3.0",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
