@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "test": "echo No tests found",
     "lint": "eslint . --fix",
     "precommit": "lint-staged && yarn run lint",
     "semantic-release": "semantic-release pre && semantic-release post",
@@ -51,5 +52,6 @@
       "git add"
     ]
   },
-  "version": "0.0.0-development"
+  "version": "0.0.0-development",
+  "license": "MIT"
 }
