@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import 'isomorphic-fetch';
 import Head from '../components/head';
+import pkg from '../package.json';
+
+const CORS_PROXY = 'https://cors-new.now.sh/';
 
 const WhoisEmoji = class extends Component {
   static async getInitialProps({ query: { d } }) {
     let whois = {};
     if (d) {
       const res = await fetch(
-        `https://cors.now.sh/https://puny-whois.now.sh/?d=${encodeURIComponent(
-          d
-        )}`
+        `${CORS_PROXY}https://puny-whois.now.sh/?d=${encodeURIComponent(d)}`
       );
       whois = await res.json();
     }
@@ -79,6 +80,15 @@ const WhoisEmoji = class extends Component {
                 : <p>No WHOIS entry found.</p>}
             </div>
           </section>}
+        <footer>
+          <p>
+            Made with{' '}
+            <span role="img" aria-label="love">
+              ❤️
+            </span>{' '}
+            by <a href={pkg.repository.url}>infiniteluke</a>
+          </p>
+        </footer>
         <style jsx>{`
           * {
             box-sizing: border-box;
@@ -128,6 +138,10 @@ const WhoisEmoji = class extends Component {
           }
           .whois-entry {
             padding: 5px 0;
+          }
+          footer {
+            padding: 60px 0 25px 0;
+            font: 25px Helvetica, Arial, sans-serif;
           }
         `}</style>
       </div>
